@@ -12,7 +12,7 @@ LinkedList<Valuta> lista = new LinkedList<Valuta>();
 	public void dodajKurs(Valuta nova) {
 		
 		if(nova == null || lista.contains(nova))
-			throw new RuntimeException("Nije moguce uneti nepostojeci ili vec postojeci kurs.");
+			throw new RuntimeException("Nemoguce je uneti nepostojeci ili vec postojeci kurs.");
 	
 		lista.add(nova);
 	}
