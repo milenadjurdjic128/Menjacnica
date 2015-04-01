@@ -56,7 +56,7 @@ public class Valuta {
 	}
 	public void setSrednjiKurs(double srednjiKurs) {
 		if(srednjiKurs < kupovniKurs || srednjiKurs > prodajniKurs || srednjiKurs < 0)
-			throw new RuntimeException("Srednji kurs ne moze biti manju od kupovnig, niti veci od prodajnog kursa.");
+			throw new RuntimeException("Morate uneti kurs. Napomena: Srednji kurs ne moze biti manji od kupovnig, niti veci od prodajnog kursa.");
 		this.srednjiKurs = srednjiKurs;
 	}
 	public int hashCode() {
