@@ -7,29 +7,29 @@ import menjacnica.Valuta;
 
 public class Menjacnica implements MenjacnicaInterfejs {
 
-	private LinkedList<Valuta> niz = new LinkedList<Valuta>();
+	private LinkedList<Valuta> lista = new LinkedList<Valuta>();
 	
 	public void dodajKurs(Valuta nova) {
 		if (nova == null) 
 			throw new RuntimeException("Nepravilan unos.");
 		
-		if(niz.contains(nova))
+		if(lista.contains(nova))
 			throw new RuntimeException("Vec postoji.");
 		
-		niz.add(nova);
+		lista.add(nova);
 	}
 
 	public boolean izbrisiKurs(Valuta nepotrebna) {
 		if(nepotrebna == null)
 			throw new RuntimeException("Morate uneti koji kurs zelite da izbrisete");
-		if(!(niz.contains(nepotrebna)))
+		if(!(lista.contains(nepotrebna)))
 			throw new RuntimeException("Uneti kurs ne postoji");
 		
 		boolean izbrisan = false;
 		
-		niz.remove(nepotrebna);
+		lista.remove(nepotrebna);
 		
-		if(!(niz.contains(nepotrebna))) {
+		if(!(lista.contains(nepotrebna))) {
 			izbrisan = true;
 		} else {
 			izbrisan = false;
@@ -43,12 +43,12 @@ public class Menjacnica implements MenjacnicaInterfejs {
 			throw new RuntimeException("Morate uneti sve podatke.");
 			
 		Valuta v = new Valuta();
-			for (int i = 0; i < niz.size(); i++) {
-				if ( (niz.get(i).getNaziv().equals(trazena) || 
-						niz.get(i).getSkraceniNaziv().equals(trazena)) 
-						&& niz.get(i).getDatum().equals(dat)) {
+			for (int i = 0; i < lista.size(); i++) {
+				if ( (lista.get(i).getNaziv().equals(trazena) || 
+						lista.get(i).getSkraceniNaziv().equals(trazena)) 
+						&& lista.get(i).getDatum().equals(dat)) {
 					
-						v = niz.get(i);
+						v = lista.get(i);
 						break;
 				}
 			}
