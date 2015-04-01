@@ -1,14 +1,20 @@
 package interfejs;
 
 import java.util.GregorianCalendar;
+import java.util.LinkedList;
 
 import menjacnica.Valuta;
 
 public class Menjacnica implements MenjacnicaInterfejs {
 
+LinkedList<Valuta> lista = new LinkedList<Valuta>();
+	
 	public void dodajKurs(Valuta nova) {
-		// TODO Auto-generated method stub
-
+		
+		if(nova == null || lista.contains(nova))
+			throw new RuntimeException("Nije moguce uneti nepostojeci ili vec postojeci kurs.");
+	
+		lista.add(nova);
 	}
 
 	public boolean izbrisiKurs(Valuta nepotrebna) {
